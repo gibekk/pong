@@ -3,7 +3,7 @@ import pygame
 pygame.init()
 
 (WindowWidth, WindowHeight) = (800, 600)
-vel = 3
+vel = 5
 vel_ballx = 3
 vel_bally = 3
 width = WindowWidth * 0.313
@@ -16,7 +16,7 @@ x_ball = (WindowWidth / 2)
 y_ball = (WindowHeight / 2)
 
 screen = pygame.display.set_mode((WindowWidth, WindowHeight))
-pygame.display.set_caption('Tutorial 1')
+pygame.display.set_caption('Ping Pong 1.0')
 
 running = True
 while running:
@@ -28,8 +28,10 @@ while running:
 
 
     keys = pygame.key.get_pressed()
+
     y_ball += vel_bally
     x_ball += vel_ballx
+
     if x_ball > WindowWidth or x_ball < 0:
         vel_ballx = -vel_ballx
 
@@ -63,10 +65,10 @@ while running:
         if x1 > 800 - width:
             x1 = 800 - width
 
-    screen.fill((64, 189, 26))
-    pygame.draw.rect(screen, (255, 0, 0), (x1, y1, width, height))
-    pygame.draw.rect(screen, (255, 0, 0), (x2, y2, width, height))
-    pygame.draw.circle(screen, (6, 5, 5), (x_ball, y_ball), 12)
+    screen.fill((255, 255, 255))
+    pygame.draw.rect(screen, (0, 0, 0), (x1, y1, width, height))
+    pygame.draw.rect(screen, (0, 0, 0), (x2, y2, width, height))
+    pygame.draw.circle(screen, (205, 13, 13), (x_ball, y_ball), 12)
     pygame.display.flip()
 
 pygame.quit()
