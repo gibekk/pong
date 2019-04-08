@@ -39,8 +39,8 @@ while running:
     if y_ball <= y2 + height and x_ball >= x2 and x_ball <= x2 + width:
         vel_bally = vel_bally * -1
 
-    if y_ball < 0:
-        vel_bally = -vel_bally
+    if y_ball < 0 or y_ball > WindowHeight:
+        vel_bally = vel_bally * -1
 
 
     if keys[pygame.K_a]:
